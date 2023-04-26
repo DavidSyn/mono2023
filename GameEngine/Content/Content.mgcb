@@ -13,6 +13,20 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin fonts/consolas_subtitle.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:fonts/consolas_subtitle.spritefont
+
+#begin fonts/consolas_title.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:fonts/consolas_title.spritefont
+
 #begin fonts/consolas.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor

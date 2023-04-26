@@ -18,3 +18,4 @@ Detta system är ansvarar för att rita ut saker på skärmen. Det verkar inte s
 
 ## Läs vidare
 - [MonoGame Samples](https://github.com/MonoGame/MonoGame.Samples)
+- [Slopes](https://gamedevelopment.tutsplus.com/tutorials/basic-2d-platformer-physics-part-7-slopes-groundwork--cms-28472)

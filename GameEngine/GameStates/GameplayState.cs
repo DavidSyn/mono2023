@@ -1,5 +1,4 @@
-﻿using GameEngine.Components;
-using GameEngine.Input;
+﻿using GameEngine.Input;
 using GameEngine.Systems;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -8,9 +7,8 @@ using MonoGame.Extended.Entities;
 
 namespace GameEngine.GameStates
 {
-    public class SplashGameState : BaseGameState
+    public class GameplayState : BaseGameState
     {
-
         public override void Initialize(
             ContentManager contentManager, 
             GraphicsDevice graphicsDevice)
@@ -28,17 +26,6 @@ namespace GameEngine.GameStates
         public override void LoadContent()
         {
             LoadFPSCounter();
-
-            var titleFont = LoadFont("Fonts/consolas_title");
-            var subtitleFont = LoadFont("Fonts/consolas_subtitle");
-
-            var title = _entities.CreateEntity();
-            title.Attach(new TextComponent("coolgamename", titleFont, Color.Black));
-            title.Attach(new PositionComponent(803, 440));
-
-            var subtitle = _entities.CreateEntity();
-            subtitle.Attach(new TextComponent("press Enter or Start", subtitleFont, Color.Black));
-            subtitle.Attach(new PositionComponent(803, 500));
         }
 
         public override void UnloadContent()

@@ -49,6 +49,14 @@ namespace GameEngine
                 Exit();
             }
 
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Enter))
+            {
+                if (_currentState is SplashGameState)
+                {
+                    SwitchGameState(new GameplayState());
+                }
+            }
+
             _currentState.Update(gameTime);
             base.Update(gameTime);
         }
