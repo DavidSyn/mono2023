@@ -27,6 +27,7 @@ namespace GameEngine.GameStates
             _frameCounter = new FrameCounter();
 
             _entities = new WorldBuilder()
+                .AddSystem(new InputSystem(_inputManager))
                 .AddSystem(new RenderSystem(_graphicsDevice, _frameCounter))
                 .Build();
         }
@@ -35,6 +36,19 @@ namespace GameEngine.GameStates
         {
             LoadFPSCounter();
             LoadTiles("01");
+
+            var playerSprite = LoadTexture("sprites/characters/player/qoute-stand-right");
+            var playerStartPosition = new Vector2(589, 96);
+
+            var player = _entities.CreateEntity();
+            player.Attach(new PlayerComponent());
+            player.Attach(new SpriteComponent(
+                playerSprite));
+            player.Attach(new PositionComponent(
+                playerStartPosition.X,
+                playerStartPosition.Y));
+            player.Attach(new VelocityComponent(
+                15.0f));
         }
 
         public override void UnloadContent()
