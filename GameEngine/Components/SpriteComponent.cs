@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using GameEngine.Constants;
 
 namespace GameEngine.Components
 {
@@ -8,7 +9,19 @@ namespace GameEngine.Components
         public Texture2D Texture { get; set; }
         public Color DrawColor { get; set; }
         public bool Draw { get; set; }
-        public int Layer { get; set; }
+        public LayerEnum Layer { get; set; }
+
+        public SpriteComponent(
+            Texture2D texture,
+            LayerEnum layer = LayerEnum.Normal,
+            bool draw = true)
+        {
+            Texture = texture;
+            DrawColor = Color.White;
+            Layer = layer;
+            Draw = draw;
+        }
+
         public Matrix GetTransform(Vector2 position, float rotation = 0f)
         {
             var origin = new Vector2(Texture.Width / 2, Texture.Height / 2);
@@ -26,17 +39,6 @@ namespace GameEngine.Components
             var result = new Color[Texture.Width * Texture.Height];
             Texture.GetData(result);
             return result;
-        }
-
-        public SpriteComponent(
-            Texture2D texture,
-            int layer = 3,
-            bool draw = true)
-        {
-            Texture = texture;
-            DrawColor = Color.White;
-            Layer = layer;
-            Draw = draw;
         }
     }
 }

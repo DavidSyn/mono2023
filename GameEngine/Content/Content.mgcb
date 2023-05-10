@@ -34,6 +34,45 @@
 /processorParam:TextureFormat=Compressed
 /build:fonts/consolas.spritefont
 
+#begin levels/01.txt
+/copy:levels/01.txt
+
+#begin sprites/blocks/blocking_tile_left_slope.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:sprites/blocks/blocking_tile_left_slope.png
+
+#begin sprites/blocks/blocking_tile_right_slope.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:sprites/blocks/blocking_tile_right_slope.png
+
+#begin sprites/blocks/blocking_tile.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:sprites/blocks/blocking_tile.png
+
 #begin sprites/blocks/tile.png
 /importer:TextureImporter
 /processor:TextureProcessor

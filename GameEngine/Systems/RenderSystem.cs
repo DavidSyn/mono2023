@@ -15,12 +15,13 @@ namespace GameEngine.Systems
         private float _scale;
         private FrameCounter _frameCounter;
         private ComponentMapper<PositionComponent> _positionMapper;
+        private ComponentMapper<SpriteComponent> _spriteMapper;
         private ComponentMapper<TextComponent> _textMapper;
 
         public RenderSystem(
             GraphicsDevice graphicsDevice,
             FrameCounter frameCounter)
-            : base(Aspect.All(typeof(PositionComponent)).One(typeof(TextComponent)))
+            : base(Aspect.All(typeof(PositionComponent)).One(typeof(SpriteComponent), typeof(TextComponent)))
         {
             _graphicsDevice = graphicsDevice;
             _spriteBatch = new SpriteBatch(_graphicsDevice);
@@ -32,6 +33,7 @@ namespace GameEngine.Systems
         public override void Initialize(IComponentMapperService mapperService)
         {
             _positionMapper = mapperService.GetMapper<PositionComponent>();
+            _spriteMapper = mapperService.GetMapper<SpriteComponent>();
             _textMapper = mapperService.GetMapper<TextComponent>();
 
             _renderTarget = new RenderTarget2D(
@@ -60,6 +62,14 @@ namespace GameEngine.Systems
             foreach (var entityId in ActiveEntities)
             {
                 var position = _positionMapper.Get(entityId);
+                if (_spriteMapper.Has(entityId))
+                {
+                    var sprite = _spriteMapper.Get(entityId);
+                    _spriteBatch.Draw(
+                        sprite.Texture,
+                        position.Position,
+                        sprite.DrawColor);
+                }
                 if (_textMapper.Has(entityId))
                 {
                     var text = _textMapper.Get(entityId);
